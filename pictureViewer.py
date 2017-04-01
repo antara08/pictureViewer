@@ -9,8 +9,8 @@ from datetime import datetime
 #import pymysql
 
 app= Flask(__name__)
-app.config['SECRET_KEY']= '\xce\xd0=g\x8c\xb0U\xf9\xe6V\x044\xb1aR\xb7&Z^\xa55\xeb\x02\x02'
-APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+#app.config['SECRET_KEY']= '\xce\xd0=g\x8c\xb0U\xf9\xe6V\x044\xb1aR\xb7&Z^\xa55\xeb\x02\x02'
+#APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 	
 @app.route('/')
 @app.route('/index')
@@ -23,18 +23,18 @@ def add():
 	
 @app.route('/upload',methods=['POST'])
 def upload():
-	target= os.path.join(APP_ROOT, 'images/')
-	print(target)
+	#target= os.path.join(APP_ROOT, 'images/')
+	#print(target)
 	
-	if not os.path.isdir(target):
-	    os.mkdir(target)
+	#if not os.path.isdir(target):
+	    #os.mkdir(target)
 	
-	    for file in request.files.getlist("file") :
-		 print(file)
-		 filename= file.filename
-		 destination="/".join([target,filename])
-		 print(destination)
-		 file.save(destination)
+	    #for file in request.files.getlist("file") :
+		 #print(file)
+		 #filename= file.filename
+		 #destination="/".join([target,filename])
+		 #print(destination)
+		 #file.save(destination)
 	return render_template("complete.html", image_name=filename)
 		
 		
@@ -86,7 +86,7 @@ def upload():
 
             # db.session.rollback()
 
-        return render_template('complete.html', results=query_db, num_return=num_return)                
+        return render_template('complete.html')                
 
     
 
