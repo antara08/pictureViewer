@@ -1,5 +1,9 @@
-import os
-from flask import Flask, render_template, url_for, request, redirect, flash, send_from_directory
+from flask import Flask,render_template,request,jsonify, url_for,redirect,flash
+import pymysql
+import time
+import memcache
+import hashlib
+import json
 from datetime import datetime
 #from application.models import Data
 #import pymysql
