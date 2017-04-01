@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, url_for, request, redirect, flash, send_from_directory
 from datetime import datetime
 #from application.models import Data
-import pymysql
+#import pymysql
 
 app= Flask(__name__)
 app.config['SECRET_KEY']= '\xce\xd0=g\x8c\xb0U\xf9\xe6V\x044\xb1aR\xb7&Z^\xa55\xeb\x02\x02'
